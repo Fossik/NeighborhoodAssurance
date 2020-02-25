@@ -20,4 +20,10 @@ public class NAController {
 	public String readBlue() {
 		return "index";
 	} this is just an example */
+	
+	//page for result research
+		@RequestMapping("/resultSearch")
+		public String search() {
+			return "resultSearch";
+		}
 }
