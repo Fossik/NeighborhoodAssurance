@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 	
 <head>
 	<meta charset="ISO-8859-1"/>
-	<title>NeighborhoodAssurance.com</title>
+	<link rel="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../static/stylesheet.css" />
+	<title>NeighborhoodAssurance.com</title>
+	
 </head>
 
 <body>
@@ -13,10 +15,12 @@
 	<br/>
 	
 	Search to find out about your desired location...
-	<form>
-		<input type="text" name="state" placeholder="Test: Search for OH"/>
+	<form action="#" th:action="@{/searchResults}" method="GET"> <!-- need to add th:object=${dtonameDTO} -->
+		<input type="text" name="searchTerm" placeholder="Test: Search for OH"/> <!-- need to add th:field="*{DTO OBJECT  EX:Latitude}" -->
 		<button name="submit" type="submit" value="0">Submit</button>
 	</form>
+	
+
 </body>
 
 </html>

@@ -3,21 +3,48 @@ package com.neighborhoodAssurance;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class NAController {
+	
+	//private ServiceStub
 
 	@RequestMapping(value="/index", method=RequestMethod.GET) 
-	public String index() {
+	public String index()
+	{
 		return "index";
 		
 	}
 	@RequestMapping(value="/index", method=RequestMethod.GET, headers= {"content-type=text/json"}) 
-	public String readJSON() {
+	@ResponseBody
+	public String readJSON() 
+	{
+		/*
+		 * DTO Information
+		 */
+		return "index"; //return DTO
+	}
+	/*@RequestMapping(value="/index", method=RequestMethod.GET)
+	public String readSearchValue(@RequestParam(value="searchTerm", required=true)String searchTerm) //May need defaultValue="
+	{  
+		/*
+		 * DTO Information?
+		 
+		
+		return "index";
+		}*/
+	 
+	/**
+	 * Endpoint the search bar will submit to
+	 * prevents error once entering search term and submitting
+	 * @return
+	 */
+	@RequestMapping("/searchResults")
+	public String searchResults(@RequestParam(value="searchTerm", required=true)String searchTerm) //The annotation and values describe the String var searchTerm
+	{
+		String enhancedTerm = searchTerm + ""; 
 		return "index";
 	}
-	/*@RequestMapping(value="/index", method=RequestMethod.GET, params= {"loyalty=blue"}) 
-	public String readBlue() {
-		return "index";
-	} this is just an example */
 }
