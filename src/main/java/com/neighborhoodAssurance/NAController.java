@@ -17,14 +17,16 @@ public class NAController {
 		return "index";
 		
 	}
+	
+	/**
+	 * Reads JSON
+	 * @return Returns JSON object
+	 */
 	@RequestMapping(value="/index", method=RequestMethod.GET, headers= {"content-type=text/json"}) 
 	@ResponseBody
 	public String readJSON() 
 	{
-		/*
-		 * DTO Information
-		 */
-		return "index"; //return DTO
+		return "index";
 	}
 	/*@RequestMapping(value="/index", method=RequestMethod.GET)
 	public String readSearchValue(@RequestParam(value="searchTerm", required=true)String searchTerm) //May need defaultValue="
