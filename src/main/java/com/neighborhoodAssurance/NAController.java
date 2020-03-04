@@ -45,7 +45,7 @@ public class NAController {
 	@RequestMapping("/searchResults")
 	public String searchResults(@RequestParam(value="searchTerm", required=true)String searchTerm) //The annotation and values describe the String var searchTerm
 	{
-		String enhancedTerm = searchTerm + ""; 
+		String enhancedTerm = searchTerm.trim() + ""; 
 		return HOME_PATH.replace("/", "");
 	}
 }
