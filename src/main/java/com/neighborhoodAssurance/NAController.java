@@ -15,7 +15,7 @@ public class NAController {
 	@RequestMapping(value=HOME_PATH, method=RequestMethod.GET) 
 	public String index()
 	{
-		return "index";
+		return HOME_PATH.replace("/", "");
 		
 	}
 	@RequestMapping(value=HOME_PATH, method=RequestMethod.GET, headers= {"content-type=text/json"}) 
@@ -25,7 +25,7 @@ public class NAController {
 		/*
 		 * DTO Information
 		 */
-		return "index"; //return DTO
+		return HOME_PATH.replace("/", ""); //return DTO
 	}
 	/*@RequestMapping(value=HOME_PATH, method=RequestMethod.GET)
 	public String readSearchValue(@RequestParam(value="searchTerm", required=true)String searchTerm) //May need defaultValue="
@@ -34,7 +34,7 @@ public class NAController {
 		 * DTO Information?
 		 
 		
-		return "index";
+		return HOME_PATH.replace("/", "");
 		}*/
 	 
 	/**
@@ -46,6 +46,6 @@ public class NAController {
 	public String searchResults(@RequestParam(value="searchTerm", required=true)String searchTerm) //The annotation and values describe the String var searchTerm
 	{
 		String enhancedTerm = searchTerm + ""; 
-		return "index";
+		return HOME_PATH.replace("/", "");
 	}
 }
