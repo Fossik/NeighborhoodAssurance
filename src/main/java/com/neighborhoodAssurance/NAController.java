@@ -10,30 +10,31 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class NAController {
 	
 	//private ServiceStub
+	private final String HOME_PATH = "/index";
 
-	@RequestMapping(value="/index", method=RequestMethod.GET) 
+	@RequestMapping(value=HOME_PATH, method=RequestMethod.GET) 
 	public String index()
 	{
-		return "index";
+		return HOME_PATH.replace("/", "");
 		
 	}
-	@RequestMapping(value="/index", method=RequestMethod.GET, headers= {"content-type=text/json"}) 
+	@RequestMapping(value=HOME_PATH, method=RequestMethod.GET, headers= {"content-type=text/json"}) 
 	@ResponseBody
 	public String readJSON() 
 	{
 		/*
 		 * DTO Information
 		 */
-		return "index"; //return DTO
+		return HOME_PATH.replace("/", ""); //return DTO
 	}
-	/*@RequestMapping(value="/index", method=RequestMethod.GET)
+	/*@RequestMapping(value=HOME_PATH, method=RequestMethod.GET)
 	public String readSearchValue(@RequestParam(value="searchTerm", required=true)String searchTerm) //May need defaultValue="
 	{  
 		/*
 		 * DTO Information?
 		 
 		
-		return "index";
+		return HOME_PATH.replace("/", "");
 		}*/
 	 
 	/**
@@ -44,7 +45,7 @@ public class NAController {
 	@RequestMapping("/searchResults")
 	public String searchResults(@RequestParam(value="searchTerm", required=true)String searchTerm) //The annotation and values describe the String var searchTerm
 	{
-		String enhancedTerm = searchTerm + ""; 
-		return "index";
+		String enhancedTerm = searchTerm.trim() + ""; 
+		return HOME_PATH.replace("/", "");
 	}
 }
