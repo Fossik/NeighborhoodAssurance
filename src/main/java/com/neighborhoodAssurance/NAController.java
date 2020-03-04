@@ -10,14 +10,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class NAController {
 	
 	//private ServiceStub
+	private final String HOME_PATH = "/index";
 
-	@RequestMapping(value="/index", method=RequestMethod.GET) 
+	@RequestMapping(value=HOME_PATH, method=RequestMethod.GET) 
 	public String index()
 	{
 		return "index";
 		
 	}
-	@RequestMapping(value="/index", method=RequestMethod.GET, headers= {"content-type=text/json"}) 
+	@RequestMapping(value=HOME_PATH, method=RequestMethod.GET, headers= {"content-type=text/json"}) 
 	@ResponseBody
 	public String readJSON() 
 	{
@@ -26,7 +27,7 @@ public class NAController {
 		 */
 		return "index"; //return DTO
 	}
-	/*@RequestMapping(value="/index", method=RequestMethod.GET)
+	/*@RequestMapping(value=HOME_PATH, method=RequestMethod.GET)
 	public String readSearchValue(@RequestParam(value="searchTerm", required=true)String searchTerm) //May need defaultValue="
 	{  
 		/*
