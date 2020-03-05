@@ -7,9 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class NAController {
-	
-	//private ServiceStub
+public class NeighborController {
 
 	@RequestMapping(value="/index", method=RequestMethod.GET) 
 	public String index()
@@ -21,21 +19,8 @@ public class NAController {
 	@ResponseBody
 	public String readJSON() 
 	{
-		/*
-		 * DTO Information
-		 */
-		return "index"; //return DTO
-	}
-	/*@RequestMapping(value="/index", method=RequestMethod.GET)
-	public String readSearchValue(@RequestParam(value="searchTerm", required=true)String searchTerm) //May need defaultValue="
-	{  
-		/*
-		 * DTO Information?
-		 
-		
 		return "index";
-		}*/
-	 
+	}
 	/**
 	 * Endpoint the search bar will submit to
 	 * prevents error once entering search term and submitting
