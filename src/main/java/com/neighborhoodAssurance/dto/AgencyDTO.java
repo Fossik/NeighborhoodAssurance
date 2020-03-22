@@ -8,8 +8,10 @@ public class AgencyDTO {
 	private String stateName;
 	private String stateAbbr;
 	private String divisionName;
-	private float latitude;
-	private float longitude;
+	private String regionName;
+	private String countyName;
+	private String latitude;
+	private String longitude;
 	
 	public String getOri() {
 		return ori;
@@ -47,16 +49,33 @@ public class AgencyDTO {
 	public void setDivisionName(String divisionName) {
 		this.divisionName = divisionName;
 	}
-	public float getLatitude() {
+	public String getRegionName() {
+		return regionName;
+	}
+	public void setRegionName(String regionName) {
+		this.regionName = regionName;
+	}
+	public String getCountyName() {
+		return countyName;
+	}
+	public void setCountyName(String countyName) {
+		this.countyName = countyName;
+	}
+	public String getLatitude() {
 		return latitude;
 	}
-	public void setLatitude(float latitude) {
+	public void setLatitude(String latitude) {
 		this.latitude = latitude;
 	}
-	public float getLongitude() {
+	public String getLongitude() {
 		return longitude;
 	}
-	public void setLongitude(float longitude) {
+	public void setLongitude(String longitude) {
 		this.longitude = longitude;
+	}
+	
+	@Override
+	public String toString() {
+		return ori + " " + agencyName + " " + agencyTypeName + " " + stateName + " " + stateAbbr + " " + divisionName + " " + regionName + " " + countyName + " " + latitude + " " + longitude;
 	}
 }
