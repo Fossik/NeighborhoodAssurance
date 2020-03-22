@@ -27,8 +27,8 @@ public class NAController {
 		return "home";
 	}
 	
-	@RequestMapping(value="/home", method=RequestMethod.GET, params= {"loyalty=blue"}) 
-	public ModelAndView readBlue() {
+	@RequestMapping(value="/home", method=RequestMethod.GET, params= {"loyalty=silver"}) 
+	public ModelAndView readSilver() {
 		AgencyDTO agencyDTO = agencyServiceStub.fetchByOri("HI0010000");
 		agencyDTO.setOri("HI0050000");
 		ModelAndView modelAndView = new ModelAndView();
