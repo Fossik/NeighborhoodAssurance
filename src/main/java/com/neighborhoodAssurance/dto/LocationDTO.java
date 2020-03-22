@@ -1,5 +1,5 @@
 package com.neighborhoodAssurance.dto;
 
-public class NameDTO {
-
+public class LocationDTO { 
+	
 }
