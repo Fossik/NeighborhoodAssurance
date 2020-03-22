@@ -16,24 +16,16 @@ public class NAController {
 	private IAgencyService agencyServiceStub;
 
 	@RequestMapping(value="/home", method=RequestMethod.GET) 
-	public String home(Model model) {
+	public ModelAndView home() {
 		AgencyDTO agencyDTO = agencyServiceStub.fetchByOri("HI0010000");
-		model.addAttribute("agencyDTO", agencyDTO);
-		return "home";
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("home");
+		modelAndView.addObject("agencyDTO", agencyDTO);
+		return modelAndView;
 	}
 	
 	@RequestMapping(value="/home", method=RequestMethod.GET, headers= {"content-type=text/json"}) 
 	public String readJSON() {
 		return "home";
-	}
-	
-	@RequestMapping(value="/home", method=RequestMethod.GET, params= {"loyalty=silver"}) 
-	public ModelAndView readSilver() {
-		AgencyDTO agencyDTO = agencyServiceStub.fetchByOri("HI0010000");
-		agencyDTO.setOri("HI0050000");
-		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.setViewName("home");
-		modelAndView.addObject("agencyDTO", agencyDTO);
-		return modelAndView;
 	}
 }
