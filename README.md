@@ -8,12 +8,16 @@ Users can also create an account, affiliate with a neighborhood, and communicate
 
 How to use the app :
 
-Anyone can search for an address without creating an account.
-Once you enter a valid address and click on "search", you will have the criminal rate showing up on your screen with a symbol saying if the rate is growing, staying consistent or decreasing.
+The first step will be Create An account. (in development)
 
-To communicate with other neighbors:
+Once you are connected, you can search an address, and it will show you the criminal rate.(in development)
+
+The showing of the rate will be paired with a symbol saying if the rate is growing, staying consistent or decreasing.(in development)
+
+Thanks to Neighborhood Assurance, you will also be able to communicate with other neighbors:
+
 You will need to login through an interface.
 
 Once you are logged in, you can specify your neighborhood by providing the information asked.
 
-Once you are logged in, you'll also be able to contact the other people in your neighborhood.
+Once you are logged in, you'll be able to contact your neighbors.
