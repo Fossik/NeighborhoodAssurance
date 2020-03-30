@@ -6,6 +6,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class AgencyServiceStub implements IAgencyService {
 
+	/**
+	 * Assigned agencyDTO different characteristics
+	 * In this example, the agency is based in Hawaii
+	 * @return agencyDTO
+	 */
 	@Override
 	public AgencyDTO fetchByOri(String ori) {
 		AgencyDTO agencyDTO = new AgencyDTO();
