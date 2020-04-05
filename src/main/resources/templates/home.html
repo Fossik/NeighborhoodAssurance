@@ -4,7 +4,7 @@
 <head>
 	<meta charset="ISO-8859-1"/>
 	<link rel="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="../static/stylesheet.css" />
+	<link rel="stylesheet" type="text/css" href="stylesheet.css" />
 	<title>NeighborhoodAssurance</title>
 	
 </head>
@@ -20,11 +20,11 @@
 	Your agency is:
 	<p th:text="${agencyDTO}"/>
 	
-	<!--Search to find out about your desired location...
+	<!--Search to find out about your desired location...-->
 	<form action="#" th:action="@{/searchResults}" method="GET">
 		<input type="text" name="searchTerm" placeholder="Test: Search for OH"/>
 		<button name="submit" type="submit" value="0">Submit</button>
-	</form>-->
+	</form>
 	
 
 </body>
