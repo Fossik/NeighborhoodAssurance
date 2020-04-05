@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 public class AgencyServiceStub implements IAgencyService {
 
 	@Override
-	public AgencyDTO fetchByOri(String ori) {
+	public AgencyDTO fetchByORI(String ORI) {
 		AgencyDTO agencyDTO = new AgencyDTO();
 		agencyDTO.setOri("HI0010000");
 		agencyDTO.setAgencyName("Hawaii Police Department County Sheriff's Office");

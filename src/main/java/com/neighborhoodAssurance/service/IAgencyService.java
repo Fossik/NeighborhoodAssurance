@@ -4,7 +4,7 @@ import com.neighborhoodAssurance.dto.AgencyDTO;
 
 public interface IAgencyService {
 
-	AgencyDTO fetchByOri(String ori);
+	AgencyDTO fetchByORI(String ORI);
 
 	void save(AgencyDTO agencyDTO);
 

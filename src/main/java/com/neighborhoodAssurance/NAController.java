@@ -17,7 +17,7 @@ public class NAController {
 
 	@RequestMapping(value="/home", method=RequestMethod.GET) 
 	public ModelAndView home() {
-		AgencyDTO agencyDTO = agencyServiceStub.fetchByOri("HI0010000");
+		AgencyDTO agencyDTO = agencyServiceStub.fetchByORI("HI0010000");
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName("home");
 		modelAndView.addObject("agencyDTO", agencyDTO);
