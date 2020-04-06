@@ -23,6 +23,15 @@ public class NAController {
 		modelAndView.addObject("agencyDTO", agencyDTO);
 		return modelAndView;
 	}
+	/**
+	 * Endpoint for a user to log in
+	 * Adds the ability to create personolized information
+	 * @return
+	 */
+	@RequestMapping(value="/login", method=RequestMethod.GET)
+	public String login{
+		return "login";
+	}
 	
 	@RequestMapping(value="/home", method=RequestMethod.GET, headers= {"content-type=text/json"}) 
 	public String readJSON() {
