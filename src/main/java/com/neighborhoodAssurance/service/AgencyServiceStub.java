@@ -44,5 +44,11 @@ public class AgencyServiceStub implements IAgencyService {
 	public void setAgencyDAO(IAgencyDAO agencyDAO) {
 		this.agencyDAO = agencyDAO;		
 	}
+
+	@Override
+	public IAgencyDAO getAgencyDAO() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

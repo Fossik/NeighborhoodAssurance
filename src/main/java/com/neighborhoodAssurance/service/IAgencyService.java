@@ -15,4 +15,6 @@ public interface IAgencyService {
 
 	void setAgencyDAO(IAgencyDAO agencyDAO);
 
+	IAgencyDAO getAgencyDAO();
+
 }
