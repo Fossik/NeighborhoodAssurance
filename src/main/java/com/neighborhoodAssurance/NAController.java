@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class NAController {
@@ -21,13 +22,21 @@ public class NAController {
 	@Autowired
 	private IAgencyService agencyServiceStub;
 
-	@RequestMapping(value="/", method=RequestMethod.GET) 
+	@RequestMapping(value="/home", method=RequestMethod.GET, params={"state=hawaii"}) 
 	public ModelAndView home() {
 		AgencyDTO agencyDTO = agencyServiceStub.fetchByORI("HI0010000");
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName("home");
 		modelAndView.addObject("agencyDTO", agencyDTO);
 		return modelAndView;
+	}
+	
+	@RequestMapping(value="/home", method=RequestMethod.GET)
+	@ResponseBody
+	public AgencyDTO read(Model model) {
+		AgencyDTO agencyDTO = agencyServiceStub.fetchByORI("HI0010000");
+		model.addAttribute("agencyDTO", agencyDTO);
+		return agencyDTO;
 	}
 	
 	@RequestMapping(value="/home", method=RequestMethod.GET, headers= {"content-type=text/json"}) 
