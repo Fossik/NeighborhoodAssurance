@@ -39,7 +39,18 @@ public class NAController {
 		return "home";
 	}
 	
-
+	@RequestMapping("/searchResults")
+	public String searchResults(@RequestParam(value="searchTerm", required=false, defaultValue="") String searchTerm) {
+		String enhancedTerm = searchTerm + "";
+		try {
+			List<AgencyDTO> fetchAgency = agencyService.fetchAgencies(searchTerm);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return "error";
+		}
+		return "searchResults";
+	}
 	
 	/**@RequestMapping(value="/home", method=RequestMethod.GET)
 	@ResponseBody
