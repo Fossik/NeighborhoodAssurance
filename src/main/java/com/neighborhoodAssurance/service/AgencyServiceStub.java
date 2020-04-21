@@ -1,11 +1,17 @@
 package com.neighborhoodAssurance.service;
 
+import com.neighborhoodAssurance.dao.IAgencyDAO;
 import com.neighborhoodAssurance.dto.AgencyDTO;
+
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 @Component
 public class AgencyServiceStub implements IAgencyService {
 
+	private IAgencyDAO agencyDAO;
+	
 	@Override
 	public AgencyDTO fetchByORI(String ORI) {
 		AgencyDTO agencyDTO = new AgencyDTO();
@@ -23,8 +29,20 @@ public class AgencyServiceStub implements IAgencyService {
 	}
 	
 	@Override
-	public void save(AgencyDTO agencyDTO) {
-		
+	public boolean save(AgencyDTO agencyDTO) throws Exception {
+		boolean result = agencyDAO.save(agencyDTO);
+		return result;
+	}
+
+	@Override
+	public List<AgencyDTO> fetchAgencies(String string) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setAgencyDAO(IAgencyDAO agencyDAO) {
+		this.agencyDAO = agencyDAO;		
 	}
 	
 }
