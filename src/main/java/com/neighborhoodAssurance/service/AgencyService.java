@@ -27,7 +27,7 @@ public class AgencyService implements IAgencyService {
 	@Override
 	public List<AgencyDTO> fetchAgencies(String string) throws Exception {
 		// TODO Auto-generated method stub
-		return agencyDAO.fetch("Hawaii");
+		return agencyDAO.fetch("HI");
 	}
 
 	@Override
