@@ -1,17 +1,40 @@
 package com.neighborhoodAssurance.dto;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class AgencyDTO {
 
+	@SerializedName("ori")
+	@Expose
 	private String ori;
+	@SerializedName("agency_name")
+	@Expose
 	private String agencyName;
+	@SerializedName("agency_type_name")
+	@Expose
 	private String agencyTypeName;
+	@SerializedName("state_name")
+	@Expose
 	private String stateName;
+	@SerializedName("state_abbr")
+	@Expose
 	private String stateAbbr;
+	@SerializedName("division_name")
+	@Expose
 	private String divisionName;
+	@SerializedName("region_name")
+	@Expose
 	private String regionName;
+	@SerializedName("county_name")
+	@Expose
 	private String countyName;
-	private String latitude;
-	private String longitude;
+	@SerializedName("latitude")
+	@Expose
+	private Double latitude;
+	@SerializedName("longitude")
+	@Expose
+	private Double longitude;
 	
 	public String getOri() {
 		return ori;
@@ -61,16 +84,16 @@ public class AgencyDTO {
 	public void setCountyName(String countyName) {
 		this.countyName = countyName;
 	}
-	public String getLatitude() {
+	public double getLatitude() {
 		return latitude;
 	}
-	public void setLatitude(String latitude) {
+	public void setLatitude(double latitude) {
 		this.latitude = latitude;
 	}
-	public String getLongitude() {
+	public double getLongitude() {
 		return longitude;
 	}
-	public void setLongitude(String longitude) {
+	public void setLongitude(double longitude) {
 		this.longitude = longitude;
 	}
 	
