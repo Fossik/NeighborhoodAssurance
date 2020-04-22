@@ -7,6 +7,7 @@ import com.neighborhoodAssurance.dto.HawaiiAgenciesList;
 import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -72,6 +73,7 @@ public class AgencyDAO implements IAgencyDAO {
 	public List<HawaiiAgencies> fetch(String searchFilter) throws Exception {
 		Retrofit retrofit = new Retrofit.Builder()
 				.baseUrl("https://api.usa.gov/crime/fbi/sapi")
+				.addConverterFactory(GsonConverterFactory.create())
 				.build();
 		
 		GetAgencies getAgencies = retrofit.create(GetAgencies.class);
@@ -80,8 +82,10 @@ public class AgencyDAO implements IAgencyDAO {
 		Response<HawaiiAgenciesList> execute = hawaiiAgencies.execute();
 		HawaiiAgenciesList hawaiiAgenciesList = execute.body();
 		
+		List<HawaiiAgencies> hiAgencies = hawaiiAgenciesList.getHIAgencies();
+		
 		// TODO Auto-generated method stub
-		return hawaiiAgenciesList.getHIAgencies();
+		return hiAgencies;
 	}
 
 	@Override
