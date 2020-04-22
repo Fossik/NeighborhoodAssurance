@@ -2,16 +2,12 @@ package com.neighborhoodAssurance.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import com.neighborhoodAssurance.dao.IAgencyDAO;
 import com.neighborhoodAssurance.dto.AgencyDTO;
+import com.neighborhoodAssurance.dto.HawaiiAgencies;
 
 public class AgencyService implements IAgencyService {
 
-	@Autowired
-	IAgencyDAO agencyDAO;
-	
 	@Override
 	public AgencyDTO fetchByORI(String ORI) {
 		// TODO Auto-generated method stub
@@ -25,9 +21,9 @@ public class AgencyService implements IAgencyService {
 	}
 
 	@Override
-	public List<AgencyDTO> fetchAgencies(String string) throws Exception {
+	public List<HawaiiAgencies> fetchAgencies(String string) throws Exception {
 		// TODO Auto-generated method stub
-		return agencyDAO.fetch("HI");
+		return null;
 	}
 
 	@Override
@@ -40,6 +36,12 @@ public class AgencyService implements IAgencyService {
 	public IAgencyDAO getAgencyDAO() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public boolean save(List<HawaiiAgencies> hawaiiAgencies) throws Exception {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

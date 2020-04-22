@@ -1,6 +1,7 @@
 package com.neighborhoodAssurance;
 
 import com.neighborhoodAssurance.dto.AgencyDTO;
+import com.neighborhoodAssurance.dto.HawaiiAgencies;
 import com.neighborhoodAssurance.service.IAgencyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.converter.xml.SourceHttpMessageConverter;
@@ -43,7 +44,7 @@ public class NAController {
 	public String searchResults(@RequestParam(value="searchTerm", required=false, defaultValue="") String searchTerm) {
 		String enhancedTerm = searchTerm + "";
 		try {
-			List<AgencyDTO> fetchAgency = agencyService.fetchAgencies(searchTerm);
+			List<HawaiiAgencies> fetchAgency = agencyService.fetchAgencies(searchTerm);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

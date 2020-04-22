@@ -2,6 +2,7 @@ package com.neighborhoodAssurance.service;
 
 import com.neighborhoodAssurance.dao.IAgencyDAO;
 import com.neighborhoodAssurance.dto.AgencyDTO;
+import com.neighborhoodAssurance.dto.HawaiiAgencies;
 
 import java.util.List;
 
@@ -35,7 +36,7 @@ public class AgencyServiceStub implements IAgencyService {
 	}
 
 	@Override
-	public List<AgencyDTO> fetchAgencies(String string) throws Exception {
+	public List<HawaiiAgencies> fetchAgencies(String string) throws Exception {
 		// TODO Auto-generated method stub
 		return agencyDAO.fetch("HI");
 	}
@@ -49,6 +50,12 @@ public class AgencyServiceStub implements IAgencyService {
 	public IAgencyDAO getAgencyDAO() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public boolean save(List<HawaiiAgencies> hawaiiAgencies) throws Exception {
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
 }

@@ -101,4 +101,5 @@ public class AgencyDTO {
 	public String toString() {
 		return ori + " " + agencyName + " " + agencyTypeName + " " + stateName + " " + stateAbbr + " " + divisionName + " " + regionName + " " + countyName + " " + latitude + " " + longitude;
 	}
+	
 }

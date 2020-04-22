@@ -18,4 +18,5 @@ public class HawaiiAgenciesList {
 	public void setHIAgencies(List<HawaiiAgencies> hiAgencies) {
 		this.hiAgencies = hiAgencies;
 	}
+	
 }

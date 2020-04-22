@@ -42,4 +42,5 @@ public class HawaiiAgencies {
 	public void setHawaiiAgency4(HawaiiAgency4 hawaiiAgency4) {
 		this.hawaiiAgency4 = hawaiiAgency4;
 	}
+	
 }

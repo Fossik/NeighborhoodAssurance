@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 import com.neighborhoodAssurance.dao.IAgencyDAO;
 import com.neighborhoodAssurance.dto.AgencyDTO;
+import com.neighborhoodAssurance.dto.HawaiiAgencies;
 
 @Component
 public interface IAgencyService {
@@ -14,10 +15,12 @@ public interface IAgencyService {
 
 	boolean save(AgencyDTO agencyDTO) throws Exception;
 	
-	List<AgencyDTO> fetchAgencies(String string) throws Exception;
+	List<HawaiiAgencies> fetchAgencies(String string) throws Exception;
 
 	void setAgencyDAO(IAgencyDAO agencyDAO);
 
 	IAgencyDAO getAgencyDAO();
+
+	boolean save(List<HawaiiAgencies> hawaiiAgencies) throws Exception;
 
 }

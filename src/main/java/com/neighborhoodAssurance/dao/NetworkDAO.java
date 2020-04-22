@@ -42,12 +42,14 @@ public class NetworkDAO {
 				sb.append(inputLine);
 				//read the next line
 				inputLine = bufferedReader.readLine();
+				}
 			}
-		}
 		finally {
 			urlConnection.disconnect();
-		}
+			}
 		
 		return sb.toString();
+		
 	}
+	
 }
