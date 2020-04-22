@@ -38,7 +38,7 @@ public class NetworkDAO {
 			//read one line at a time
 			String inputLine = bufferedReader.readLine();
 			while (inputLine != null) {
-				//add this to our ouput
+				//add this to our output
 				sb.append(inputLine);
 				//read the next line
 				inputLine = bufferedReader.readLine();

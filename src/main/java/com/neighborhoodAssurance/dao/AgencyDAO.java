@@ -18,7 +18,7 @@ public class AgencyDAO implements IAgencyDAO {
 	public List<AgencyDTO> fetch(String searchFilter) throws Exception {
 		List<AgencyDTO> allAgencies = new ArrayList<AgencyDTO>();
 		
-		networkDAO.request("https://api.usa.gov/crime/fbi/sapi/api/agencies/byStateAbbr/HI?API_KEY=9Swi2aeyB5WlKtg3QXD0wduDwty7PsQdXqPoQRs5");
+		String rawJson = networkDAO.request("https://api.usa.gov/crime/fbi/sapi/api/agencies/byStateAbbr/HI?API_KEY=9Swi2aeyB5WlKtg3QXD0wduDwty7PsQdXqPoQRs5");
 		
 		return allAgencies;
 	}
