@@ -23,8 +23,8 @@ public class AgencyServiceStub implements IAgencyService {
 		agencyDTO.setDivisionName("Pacific");
 		agencyDTO.setRegionName("West");
 		agencyDTO.setCountyName("HAWAII");
-		agencyDTO.setLatitude("19.716698");
-		agencyDTO.setLongitude("-155.08688");
+		agencyDTO.setLatitude(19.716698);
+		agencyDTO.setLongitude(-155.08688);
 		return agencyDTO;
 	}
 	
