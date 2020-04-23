@@ -8,6 +8,8 @@ import com.neighborhoodAssurance.dto.HawaiiAgencies;
 
 public class AgencyService implements IAgencyService {
 
+	IAgencyDAO agencyDAO;
+	
 	@Override
 	public AgencyDTO fetchByORI(String ORI) {
 		// TODO Auto-generated method stub
@@ -23,7 +25,7 @@ public class AgencyService implements IAgencyService {
 	@Override
 	public List<HawaiiAgencies> fetchAgencies(String string) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return agencyDAO.fetch("HI");
 	}
 
 	@Override
