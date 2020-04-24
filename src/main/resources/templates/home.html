@@ -5,26 +5,28 @@
 	<meta charset="ISO-8859-1"/>
 	<link rel="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="stylesheet.css" />
-	<title>NeighborhoodAssurance</title>	
+	<title>Neighborhood Assurance</title>	
 </head>
 
 <body class="container">
+
 	<div class="jumbotron">
-	<h1>Welcome to Neighborhood Assurance!</h1>
-	<h3>This program allows users to insert an address and return criminal statistics
-	 based on the neighborhood. This will provide a general idea of crime rate, and a 
-	 statistical analysis if the neighborhood criminal activity has increased or 
-	 decreased over time.</h3>
-	 </div>
+		<h1>Welcome to Neighborhood Assurance!</h1>
+		<h3>
+		This program allows users to insert an address and return criminal statistics 
+		based on the neighborhood. This will provide a general idea of crime rate, and a 
+		statistical analysis if the neighborhood criminal activity has increased or 
+		decreased over time.
+	 	</h3>
+	</div>
+	
 	<br/>
 	
-	Your agency is:
-	<p th:text="${agencyDTO}"/>
-	
-
 	Search to find out about your desired location...
 	<form class="form-group" action="#" th:action="@{/searchResults}" method="GET">
-		<input class="form-control" type="text" name="searchTerm" placeholder="Test: Search for OH"/>
+		<input class="form-control" type="text" name="searchTermState" placeholder="State"/>
+		<input class="form-control" type="text" name="searchTermYearFrom" placeholder="Year From"/>
+		<input class="form-control" type="text" name="searchTermYearTo" placeholder="Year To"/>
 		<button class="btn-primary" name="submit" type="submit" value="0">Submit</button>
 	</form>
 

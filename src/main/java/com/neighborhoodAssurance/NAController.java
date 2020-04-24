@@ -22,48 +22,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class NAController {
 
 	Logger logger = LoggerFactory.getLogger(NAController.class);
-
-	@Autowired
-	private IAgencyService agencyService;
-
-	/**@RequestMapping(value="/home", method=RequestMethod.GET) 
-	public ModelAndView home() {
-		AgencyDTO agencyDTO = agencyServiceStub.fetchByORI("HI0010000");
-		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.setViewName("home");
-		modelAndView.addObject("agencyDTO", agencyDTO);
-		return modelAndView;
-	}**/
 	
 	@RequestMapping(value="/home", method=RequestMethod.GET) 
 	public String readJSON() {
 		return "home";
 	}
-	
-	@RequestMapping("/searchResults")
-	public String searchResults(@RequestParam(value="searchTerm", required=false, defaultValue="") String searchTerm) {
-		String enhancedTerm = searchTerm + "";
-		try {
-			List<HawaiiAgencies> fetchAgency = agencyService.fetchAgencies(searchTerm);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return "error";
-		}
-		return "searchResults";
-	}
-	
-	/**@RequestMapping(value="/home", method=RequestMethod.GET)
-	@ResponseBody
-	public AgencyDTO read(Model model) {
-		AgencyDTO agencyDTO = agencyServiceStub.fetchByORI("HI0010000");
-		model.addAttribute("agencyDTO", agencyDTO);
-		return agencyDTO;
-	}**/
 
-	/**@RequestMapping(value="/searchResults", method=RequestMethod.GET)
+	@RequestMapping(value="/searchResults", method=RequestMethod.GET)
 	public String doSearch(@RequestParam String searchTerm, @RequestParam int submit) {
 		logger.info("Request successful we got: " + searchTerm);
 		return "searchResults";
-	}**/
+	}
 }

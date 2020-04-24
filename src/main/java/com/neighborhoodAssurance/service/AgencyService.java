@@ -23,9 +23,9 @@ public class AgencyService implements IAgencyService {
 	}
 
 	@Override
-	public List<HawaiiAgencies> fetchAgencies(String string) throws Exception {
+	public List<HawaiiAgencies> fetchAgencies(String searchTerm) throws Exception {
 		// TODO Auto-generated method stub
-		return agencyDAO.fetch("HI");
+		return agencyDAO.fetch(searchTerm);
 	}
 
 	@Override
