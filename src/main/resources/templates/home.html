@@ -3,34 +3,48 @@
 	
 <head>
 	<meta charset="ISO-8859-1"/>
-	<link rel="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="stylesheet.css" />
-	<title>NeighborhoodAssurance</title>	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="home.css" />
+	<title>Neighborhood Assurance</title>	
 </head>
 
-<body class="container">
-	<div class="jumbotron">
-	<h1>Welcome to Neighborhood Assurance!</h1>
-	<h3>This program allows users to insert an address and return criminal statistics
-	 based on the neighborhood. This will provide a general idea of crime rate, and a 
-	 statistical analysis if the neighborhood criminal activity has increased or 
-	 decreased over time.</h3>
-	 </div>
+<body>
+	<div class="container-fluid">
+		<nav class="navbar navbar-dark">
+	  		<a class="navbar-brand" href="home">Neighborhood Assurance</a>
+	  		<form class="form-inline" action="#" th:action="@{/about}" method="GET">
+	  			<button type="submit" class="btn btn-sm btn-outline-secondary" name="goToAbout" value="0">About</button>
+	  		</form>
+		</nav>
+	</div>
+	
 	<br/>
 	
-	Your agency is:
-	<p th:text="${agencyDTO}"/>
+	<div class="container-md">
+		Search to find out about the crime data in your state...
+		<form class="form-group" action="#" th:action="@{/searchresults}" method="GET">
+			<div class="input-group mb-3">
+	  			<div class="input-group-prepend">
+	    			<span class="input-group-text" id="inputGroup-sizing-default">State</span>
+	  			</div>
+	  			<input type="text" class="form-control" name="searchState" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+			</div>
+			<div class="input-group mb-3">
+	  			<div class="input-group-prepend">
+	    			<span class="input-group-text" id="inputGroup-sizing-default">From Year</span>
+	  			</div>
+	  			<input type="text" class="form-control" name="searchYearFrom" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+			</div>
+			<div class="input-group mb-3">
+	  			<div class="input-group-prepend">
+	   				 <span class="input-group-text" id="inputGroup-sizing-default">To Year</span>
+	  			</div>
+	  			<input type="text" class="form-control" name="searchYearTo" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+			</div>
+			<button type="submit" class="btn btn-success" name="searchGo" value="0">GO!</button>
+		</form>
+	</div>
 	
-
-	Search to find out about your desired location...
-	<form class="form-group" action="#" th:action="@{/searchResults}" method="GET">
-		<input class="form-control" type="text" name="searchTerm" placeholder="Test: Search for OH"/>
-		<button class="btn-primary" name="submit" type="submit" value="0">Submit</button>
-	</form>
-
-
-	
-
 </body>
 
 </html>
