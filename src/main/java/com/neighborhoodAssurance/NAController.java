@@ -1,12 +1,16 @@
 package com.neighborhoodAssurance;
 
 import com.neighborhoodAssurance.dto.AgencyDTO;
+import com.neighborhoodAssurance.dto.CrimeDataByStateDTO;
 import com.neighborhoodAssurance.dto.HawaiiAgencies;
 import com.neighborhoodAssurance.service.IAgencyService;
+import com.neighborhoodAssurance.service.ICrimeDataService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.converter.xml.SourceHttpMessageConverter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -25,6 +29,8 @@ public class NAController {
 
 	@Autowired
 	private IAgencyService agencyService;
+	@Autowired
+	private ICrimeDataService crimeDataService;
 
 	/**@RequestMapping(value="/home", method=RequestMethod.GET) 
 	public ModelAndView home() {
@@ -40,12 +46,12 @@ public class NAController {
 		return "home";
 	}
 	
-	@RequestMapping("/searchResults")
-	public String searchResults(@RequestParam(value="searchTerm", required=false, defaultValue="") String searchTerm) {
-		String enhancedTerm = searchTerm + "";
+	@RequestMapping(path = "/searchResults/{state}/{startingYear}/{endingYear}", method = RequestMethod.GET)
+	public String searchResults(@PathVariable String state, @PathVariable int startingYear, @PathVariable int endingYear) {
 		try {
-			List<HawaiiAgencies> fetchAgency = agencyService.fetchAgencies(searchTerm);
-		} catch (Exception e) {
+			List<CrimeDataByStateDTO> fetchCrimeDataByState = crimeDataService.fetchByState(state, startingYear, endingYear);
+		} 
+		catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return "error";
