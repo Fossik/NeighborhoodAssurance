@@ -20,7 +20,7 @@ public class NAController {
 
 	@RequestMapping(value="/searchresults", method=RequestMethod.GET)
 	public String doSearch(@RequestParam String searchState, @RequestParam String searchYearFrom, @RequestParam String searchYearTo, @RequestParam int searchGo) {
-		logger.info("Request successful we got: " + searchState + ", " + searchYearFrom + ", " + searchYearTo);
+		logger.info("Request successful! We got: " + searchState + ", " + searchYearFrom + ", " + searchYearTo);
 		return "searchresults";
 	}
 	
