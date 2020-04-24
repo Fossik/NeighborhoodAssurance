@@ -10,11 +10,11 @@
 
 <body>
 	<div class="container-fluid">
-		<nav class="navbar navbar-light">
-	  		<a class="navbar-brand" href="home">
-	    		<img src="/docs/4.4/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-	    		Welcome to Neighborhood Assurance!
-	  		</a>
+		<nav class="navbar navbar-dark">
+	  		<a class="navbar-brand" href="home">Neighborhood Assurance</a>
+	  		<form class="form-inline" action="#" th:action="@{/about}" method="GET">
+	  			<button type="submit" class="btn btn-sm btn-outline-secondary" name="goToAbout" value="0">About</button>
+	  		</form>
 		</nav>
 	</div>
 </body>
