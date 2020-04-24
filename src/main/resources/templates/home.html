@@ -4,43 +4,47 @@
 <head>
 	<meta charset="ISO-8859-1"/>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+	<link rel="stylesheet" type="text/css" href="home.css" />
 	<title>Neighborhood Assurance</title>	
 </head>
 
-<body class="container">
-	<nav class="navbar navbar-light">
-  		<a class="navbar-brand" href="home">
-    		<img src="/docs/4.4/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-    		Welcome to Neighborhood Assurance!
-  		</a>
-	</nav>
+<body>
+	<div class="container-fluid">
+		<nav class="navbar navbar-light">
+	  		<a class="navbar-brand" href="home">
+	    		<img src="/docs/4.4/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+	    		Welcome to Neighborhood Assurance!
+	  		</a>
+		</nav>
+	</div>
 	
 	<br/>
 	
-	Search to find out about the crime data in your state...
-	<form class="form-group" action="#" th:action="@{/searchResults}" method="GET">
-		<div class="input-group mb-3">
-  			<div class="input-group-prepend">
-    			<span class="input-group-text" id="inputGroup-sizing-default">State</span>
-  			</div>
-  			<input type="text" class="form-control" name="searchState" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-		</div>
-		<div class="input-group mb-3">
-  			<div class="input-group-prepend">
-    			<span class="input-group-text" id="inputGroup-sizing-default">From Year</span>
-  			</div>
-  			<input type="text" class="form-control" name="searchYearFrom" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-		</div>
-		<div class="input-group mb-3">
-  			<div class="input-group-prepend">
-   				 <span class="input-group-text" id="inputGroup-sizing-default">To Year</span>
-  			</div>
-  			<input type="text" class="form-control" name="searchYearTo" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-		</div>
-		<button type="submit" class="btn btn-success" name="searchGo" value="0">GO!</button>
-	</form>
-
+	<div class="container-md">
+		Search to find out about the crime data in your state...
+		<form class="form-group" action="#" th:action="@{/searchresults}" method="GET">
+			<div class="input-group mb-3">
+	  			<div class="input-group-prepend">
+	    			<span class="input-group-text" id="inputGroup-sizing-default">State</span>
+	  			</div>
+	  			<input type="text" class="form-control" name="searchState" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+			</div>
+			<div class="input-group mb-3">
+	  			<div class="input-group-prepend">
+	    			<span class="input-group-text" id="inputGroup-sizing-default">From Year</span>
+	  			</div>
+	  			<input type="text" class="form-control" name="searchYearFrom" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+			</div>
+			<div class="input-group mb-3">
+	  			<div class="input-group-prepend">
+	   				 <span class="input-group-text" id="inputGroup-sizing-default">To Year</span>
+	  			</div>
+	  			<input type="text" class="form-control" name="searchYearTo" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+			</div>
+			<button type="submit" class="btn btn-success" name="searchGo" value="0">GO!</button>
+		</form>
+	</div>
+	
 </body>
 
 </html>
