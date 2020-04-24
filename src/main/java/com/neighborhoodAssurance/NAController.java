@@ -49,6 +49,7 @@ public class NAController {
 	@RequestMapping(path = "/searchResults/{state}/{startingYear}/{endingYear}", method = RequestMethod.GET)
 	public String searchResults(@PathVariable String state, @PathVariable int startingYear, @PathVariable int endingYear) {
 		try {
+			state = Constants.ConvertStateToAbbreviation(state);
 			List<CrimeDataByStateDTO> fetchCrimeDataByState = crimeDataService.fetchByState(state, startingYear, endingYear);
 		} 
 		catch (Exception e) {
