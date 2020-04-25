@@ -71,7 +71,7 @@ public class Constants {
 	}};
 
 	public static String ConvertStateToAbbreviation(String state) {
-		if(state == null || state.isBlank()) {
+		if(state == null || state.trim().length() == 0) {
 			return state;
 		}
 		String returnState = statesToAbbreviation.get(state.toLowerCase());

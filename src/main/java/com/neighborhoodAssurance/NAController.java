@@ -1,16 +1,10 @@
 
 package com.neighborhoodAssurance;
-import com.neighborhoodAssurance.dto.AgencyDTO;
 import com.neighborhoodAssurance.dto.CrimeDataByStateDTO;
-import com.neighborhoodAssurance.dto.HawaiiAgencies;
-import com.neighborhoodAssurance.service.IAgencyService;
 import com.neighborhoodAssurance.service.ICrimeDataService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.converter.xml.SourceHttpMessageConverter;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -25,9 +19,6 @@ public class NAController {
 
 	Logger logger = LoggerFactory.getLogger(NAController.class);
 
-
-	@Autowired
-	private IAgencyService agencyService;
 	@Autowired
 	private ICrimeDataService crimeDataService;
 	
