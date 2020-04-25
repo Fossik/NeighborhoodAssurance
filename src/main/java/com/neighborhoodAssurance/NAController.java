@@ -27,14 +27,14 @@ public class NAController {
 		return "home";
 	}
 
-	@RequestMapping(value="/searchresults", method=RequestMethod.GET)
+	/*@RequestMapping(value="/searchresults", method=RequestMethod.GET)
 	public String doSearch(@RequestParam String searchState, @RequestParam String searchYearFrom, @RequestParam String searchYearTo, @RequestParam int searchGo) {
 		logger.info("Request successful we got: " + searchState + ", " + searchYearFrom + ", " + searchYearTo);
 		return "searchresults";
-	}
-
-	@RequestMapping(path = "/searchResults/{state}/{startingYear}/{endingYear}", method = RequestMethod.GET)
-	public String searchResults(@PathVariable String state, @PathVariable int startingYear, @PathVariable int endingYear) {
+	}*/
+     
+	@RequestMapping(value="/searchresults", method=RequestMethod.GET)
+	public String doSearch(@RequestParam String state, @RequestParam int startingYear, @RequestParam int endingYear, @RequestParam int searchGo) {
 		try {
 			state = Constants.ConvertStateToAbbreviation(state);
 			List<CrimeDataByStateDTO> fetchCrimeDataByState = crimeDataService.fetchByState(state, startingYear, endingYear);
@@ -44,7 +44,7 @@ public class NAController {
 			e.printStackTrace();
 			return "error";
 		}
-		return "searchResults";
+		return "searchresults";
 	}
 	
 	@RequestMapping(value="/about", method=RequestMethod.GET)
