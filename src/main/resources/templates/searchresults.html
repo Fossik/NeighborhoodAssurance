@@ -17,9 +17,27 @@
 	  		</form>
 		</nav>
 	</div>
-	<p th:each="CrimeData : ${CrimeDataByState}">
-	 	<span th:text="${CrimeData.population}"></span>
-	</p>
+	
+	<div class="container-md">
+		<p th:each="CrimeData : ${CrimeDataByState}">
+		 	State ID: <span th:text="${CrimeData.stateId}"></span><br/>
+		 	State Abbreviation: <span th:text="${CrimeData.stateAbbreviation}"></span><br/>
+		 	Year: <span th:text="${CrimeData.year}"></span><br/>
+		 	Population: <span th:text="${CrimeData.population}"></span><br/>
+		 	Violent Crimes Committed: <span th:text="${CrimeData.violentCrime}"></span><br/>
+		 	Homicides: <span th:text="${CrimeData.homicide}"></span><br/>
+		 	Rape Legacy: <span th:text="${CrimeData.rapeLegacy}"></span><br/>
+		 	Rape Revised: <span th:text="${CrimeData.rapeRevised}"></span><br/>
+		 	Robberies: <span th:text="${CrimeData.robbery}"></span><br/>
+		 	Aggravated Assaults: <span th:text="${CrimeData.aggravatedAssault}"></span><br/>
+		 	Property Crimes: <span th:text="${CrimeData.propertyCrime}"></span><br/>
+		 	Burglaries: <span th:text="${CrimeData.burglary}"></span><br/>
+		 	Larcenies: <span th:text="${CrimeData.larceny}"></span><br/>
+		 	Car Thefts: <span th:text="${CrimeData.motorVehicleTheft}"></span><br/>
+		 	Cases of Arson: <span th:text="${CrimeData.arson}"></span>
+		</p>
+	</div>
+	
 </body>
 
 </html>
