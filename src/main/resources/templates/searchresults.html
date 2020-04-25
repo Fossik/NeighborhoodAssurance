@@ -17,8 +17,8 @@
 	  		</form>
 		</nav>
 	</div>
-	<p th:object="${CrimeDataByStateDTO}">
-	 
+	<p th:each="CrimeData : ${CrimeDataByState}">
+	 	<span th:text="${CrimeData.population}"></span>
 	</p>
 </body>
 
