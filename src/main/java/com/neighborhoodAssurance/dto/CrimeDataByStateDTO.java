@@ -13,61 +13,73 @@ public class CrimeDataByStateDTO {
 		this.year = crimeDataJSONObject.getInt("year");
 		try {			
 			this.population = crimeDataJSONObject.getInt("population");
+			this.totalOffenses += population;
 		} catch(Exception e) {
 			this.population = null;
 		}
 		try {			
 			this.violentCrime = crimeDataJSONObject.getInt("violent_crime");
+			this.totalOffenses += violentCrime;
 		} catch(Exception e) {
 			this.violentCrime = null;
 		}
 		try {			
 			this.homicide = crimeDataJSONObject.getInt("homicide");
+			this.totalOffenses += homicide;
 		} catch(Exception e) {
 			this.homicide = null;
 		}
 		try {			
 			this.rapeLegacy = crimeDataJSONObject.getInt("rape_legacy");
+			this.totalOffenses += rapeLegacy;
 		} catch(Exception e) {
 			this.rapeLegacy = null;
 		}
 		try {			
 			this.rapeRevised = crimeDataJSONObject.getInt("rape_revised");
+			this.totalOffenses += rapeRevised;
 		} catch(Exception e) {
 			this.rapeRevised = null;
 		}
 		try {			
 			this.robbery = crimeDataJSONObject.getInt("robbery");
+			this.totalOffenses += robbery;
 		} catch(Exception e) {
 			this.robbery = null;
 		}
 		try {			
 			this.arson = crimeDataJSONObject.getInt("arson");
+			this.totalOffenses += arson;
 		} catch(Exception e) {
 			this.arson = null;
 		}
 		try {			
 			this.aggravatedAssault = crimeDataJSONObject.getInt("aggravated_assault");
+			this.totalOffenses += aggravatedAssault;
 		} catch(Exception e) {
 			this.aggravatedAssault = null;
 		}
 		try {			
 			this.propertyCrime = crimeDataJSONObject.getInt("property_crime");
+			this.totalOffenses += propertyCrime;
 		} catch(Exception e) {
 			this.propertyCrime = null;
 		}
 		try {			
 			this.burglary = crimeDataJSONObject.getInt("burglary");
+			this.totalOffenses += burglary;
 		} catch(Exception e) {
 			this.burglary = null;
 		}
 		try {			
 			this.larceny = crimeDataJSONObject.getInt("larceny");
+			this.totalOffenses += larceny;
 		} catch(Exception e) {
 			this.larceny = null;
 		}
 		try {			
 			this.motorVehicleTheft = crimeDataJSONObject.getInt("motor_vehicle_theft");
+			this.totalOffenses += motorVehicleTheft;
 		} catch(Exception e) {
 			this.motorVehicleTheft = null;
 		}
@@ -88,7 +100,16 @@ public class CrimeDataByStateDTO {
 	private Integer larceny;
 	private Integer motorVehicleTheft;
 	private Integer arson;
+	private Integer totalOffenses;
 	
+	public Integer getTotalOffenses() {
+		return totalOffenses;
+	}
+
+	public void setTotalOffenses(Integer totalOffenses) {
+		this.totalOffenses = totalOffenses;
+	}
+
 	public int getStateId() {
 		return stateId;
 	}
