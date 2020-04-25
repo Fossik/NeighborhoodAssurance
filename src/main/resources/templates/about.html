@@ -8,22 +8,38 @@
 	<title>Neighborhood Assurance</title>	
 </head>
 
+<head>
+	<meta charset="ISO-8859-1"/>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="about.css" />
+	<title>Neighborhood Assurance</title>	
+</head>
+
 <body>
 	<div class="container-fluid">
 		<nav class="navbar navbar-dark">
 	  		<a class="navbar-brand" href="home">Neighborhood Assurance</a>
 	  		<form class="form-inline" action="#" th:action="@{/about}" method="GET">
-	  			<button type="submit" class="btn btn-sm btn-outline-secondary" name="goToAbout" value="0">About</button>
+	  			<button type="submit" name="goToAbout" value="0">About</button>
 	  		</form>
 		</nav>
 	</div>
 	
-	<p>
-	This program allows users to insert an address and return criminal statistics 
-	based on the neighborhood. This will provide a general idea of crime rate, and a 
-	statistical analysis if the neighborhood criminal activity has increased or 
-	decreased over time.
-	</p>
+	</br>
+	
+	<h3>About Neighborhood Assurance</h3>
+	
+	<div class="container-md">
+		<p>
+		Neighborhood Assurance was developed and released in the first half of 2020.
+		The founders include Claire Church, Michael Lawson, Tad Preston, and Madison Rosas.
+		</br>
+		</br>
+		</br>
+		This application allows you to make a search for crime data by inputting the state and the a range of years.
+		This will show you the crime statistics of that state in within that range of time, helping you to determine if the state is safe for you and your family.
+		</p>
+	</div>
 </body>
 
 </html>

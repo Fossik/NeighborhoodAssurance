@@ -2,5 +2,11 @@
 
 nav {
 	background-color: MidnightBlue;
+}
+
+nav button {
+	border: 2px solid #6699ff;
+	border-radius: 9px;
 	color: white;
+	background-color: MidnightBLue;
 }
