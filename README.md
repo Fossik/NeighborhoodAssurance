@@ -2,7 +2,7 @@
 
 Team members : Claire Church / Michael Lawson / Tad Preston / Madison Rosas
 
-A program that allows users to complete a searh by inputing a state and a range of years. It returns criminal statistics based on the search parameters mentioend. This will provide a general idea of crime rate, and a statistical analysis if the neighborhood criminal activity has increased or decreased over time.
+A program that allows users to complete a search by inputing a state and a range of years. It returns criminal statistics based on the search parameters mentioend. This will provide a general idea of crime rate, and a statistical analysis if the neighborhood criminal activity has increased or decreased over time.
 
 Users can also create an account, affiliate with a neighborhood, and communicate with others in the same neighborhood.
 
