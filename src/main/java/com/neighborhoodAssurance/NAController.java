@@ -27,12 +27,6 @@ public class NAController {
 	public String readJSON() {
 		return "home";
 	}
-
-	/*@RequestMapping(value="/searchresults", method=RequestMethod.GET)
-	public String doSearch(@RequestParam String searchState, @RequestParam String searchYearFrom, @RequestParam String searchYearTo, @RequestParam int searchGo) {
-		logger.info("Request successful we got: " + searchState + ", " + searchYearFrom + ", " + searchYearTo);
-		return "searchresults";
-	}*/
      
 	@RequestMapping(value="/searchresults", method=RequestMethod.GET)
 	public ModelAndView doSearch(@RequestParam String state, @RequestParam int startingYear, @RequestParam int endingYear) {
