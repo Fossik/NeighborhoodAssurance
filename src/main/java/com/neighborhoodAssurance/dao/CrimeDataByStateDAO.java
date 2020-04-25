@@ -28,8 +28,11 @@ public class CrimeDataByStateDAO implements ICrimeDataByStateDAO {
 		
 		for(int i = 0; i < crimeDataJSONArray.length(); i++) {
 			JSONObject jsonCrimeData = crimeDataJSONArray.getJSONObject(i);
-			CrimeDataByStateDTO crimeDataByStateDTO = new CrimeDataByStateDTO(jsonCrimeData);
-			crimeData.add(crimeDataByStateDTO);
+			int year = jsonCrimeData.getInt("year");
+			if(year >= startingYear && year <= endingYear) {
+				CrimeDataByStateDTO crimeDataByStateDTO = new CrimeDataByStateDTO(jsonCrimeData);
+				crimeData.add(crimeDataByStateDTO);
+			}
 		}
 		
 		return crimeData;
