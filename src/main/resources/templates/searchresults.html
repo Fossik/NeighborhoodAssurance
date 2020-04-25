@@ -38,6 +38,10 @@
 		 	Total Offenses for the Year: <span th:text="${CrimeData.totalOffenses}"></span>
 		</p>
 	</div>
+	
+	<div class="container-md" th:if="${#lists.isEmpty(CrimeDataByState)}">
+        <h3>No results</h3>
+    </div>
 </body>
 
 </html>
